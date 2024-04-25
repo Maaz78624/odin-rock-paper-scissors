@@ -56,20 +56,10 @@ choiceBtns.addEventListener("click", (e) => {
     playerChoice = "scissors"
   }
   playRound(playerChoice, computerChoice);
+  if(winners.length === 5){
+    showResults()
+  }
 })
-
-
-// const playGame = () => {
-//   winners = []
-//   for(let i = 0; i < 5; i++){
-//     const playerChoice = prompt(
-//       "enter your choices (e.g rock, paper, scissors)"
-//     ).toLowerCase();
-//     const computerChoice = getComputerChoice();
-//     console.log(playRound(playerChoice, computerChoice));
-//   }
-//   showResults()
-// }
 
 const createResultsLog = (resultText) => {
   const p = document.createElement("p")
@@ -91,5 +81,3 @@ const showResults = () => {
     console.log("It's a draw!", score)
   }
 }
-
-// playGame()
