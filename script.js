@@ -2,7 +2,7 @@ const choices = ["rock", "paper", "scissors"];
 let winners = []
 
 
-function countOccurrences(arr, element) {
+function countWinners(arr, element) {
   let count = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === element) {
@@ -57,10 +57,10 @@ const playGame = () => {
 
 const showResults = () => {
   console.log(winners)
-  const playerWon = countOccurrences(winners, 1)
-  const computerWon = countOccurrences(winners, 0)
-  const tie = countOccurrences(winners, 3)
-  const score = `${countOccurrences(winners,1)}/5, you: ${playerWon}, computer: ${computerWon}, tie: ${tie}`
+  const playerWon = countWinners(winners, 1)
+  const computerWon = countWinners(winners, 0)
+  const tie = countWinners(winners, 3)
+  const score = `${playerWon}/5, you: ${playerWon}, computer: ${computerWon}, tie: ${tie}`
 
   if(playerWon > computerWon){
     console.log("You won!" , score)
