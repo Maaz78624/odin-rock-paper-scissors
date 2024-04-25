@@ -84,10 +84,15 @@ playAgainBtn.addEventListener("click", () => {
   }
 })
 
-const createResultsLog = (resultText) => {
-  const p = document.createElement("p")
-  p.textContent = resultText
-  results.appendChild(p)
+const createResultsLog = (resultText, isResult) => {
+  let el;
+  if(isResult){
+    el = document.createElement("h2")
+  }else {
+    el = document.createElement("li")
+  }
+  el.textContent = resultText
+  results.appendChild(el)
 }
 
 const showResults = () => {
@@ -97,10 +102,10 @@ const showResults = () => {
   const score = `${playerWon}/5, you: ${playerWon}, computer: ${computerWon}, tie: ${tie}`
 
   if(playerWon > computerWon){
-    createResultsLog(`You won! ${score}`)
+    createResultsLog(`You won! ${score}`, true)
   }else if(playerWon < computerWon) {
-    createResultsLog(`You lose! ${score}`)
+    createResultsLog(`You lose! ${score}`, true)
   }else {
-    createResultsLog(`It's a draw! ${score}`)
+    createResultsLog(`It's a draw! ${score}`, true)
   }
 }
